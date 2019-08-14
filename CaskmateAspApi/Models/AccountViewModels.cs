@@ -40,4 +40,8 @@ namespace CaskmateAspApi.Models
 
         public string ProviderKey { get; set; }
     }
+    public class EmailInfoViewModel
+    {
+        public string Email { get; set; }
+    }
 }

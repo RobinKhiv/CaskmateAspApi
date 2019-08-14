@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using CaskmateAspApi.Models;
 
 namespace CaskmateAspApi.Controllers
 {
@@ -13,7 +15,8 @@ namespace CaskmateAspApi.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var user = User.Identity.GetUserId();
+            return new string[] { user, "value2" };
         }
 
         // GET api/values/5
